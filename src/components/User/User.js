@@ -1,14 +1,12 @@
 import React from 'react';
 
 const User = ({user}) => {
+  const {id, name, username} =user;
   return (
       <div>
-        <p>{user.name}</p>
-        <p>{user.username}</p>
-        <p>{user.email}</p>
-        <hr/>
+        {id} -- {name} -- {username}
       </div>
   );
 };
 
-export default User;
+export  {User};
