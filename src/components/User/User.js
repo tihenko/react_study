@@ -3,7 +3,7 @@ import React from 'react';
 const User = ({user}) => {
   const {id, name, username} =user;
   return (
-      <div>
+      <div className={'w'}>
         {id} -- {name} -- {username}
       </div>
   );
