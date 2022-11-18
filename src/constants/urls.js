@@ -1,13 +1,10 @@
-const baseURL = process.env.REACT_APP_API
+const baseURL = process.env.REACT_APP_API;
 
-const urls = {
+export const urls = {
   users: '/users',
-  posts: '/posts',
-  comments: '/comments'
+  posts: '/posts'
 }
 
 export default baseURL;
 
-export {
-  urls
-}
+

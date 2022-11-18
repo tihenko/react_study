@@ -1,2 +1,2 @@
-export * from './user.service';
+export * from './users.service';
 export * from './axios.service';

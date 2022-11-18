@@ -1,7 +1,7 @@
-export const User = () => {
+export const Posts = () => {
     return (
         <div>
-            
+
         </div>
     );
 }

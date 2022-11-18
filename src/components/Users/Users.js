@@ -1,36 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { usersService } from '../../services';
 
-import { userService } from '../../services';
-import { User } from '../User/User';
+export const Users = () => {
+        const [users, setUsers] = useState(null);
 
-const Users = ({ getUser }) => {
-  const [users, setUsers] = useState([]);
+        useEffect(() => {
+    usersService.getAll().then(({data}) => setUsers(data))
+        }, [])
+        console.log(users)
 
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    userService.getAll().then(({ data }) => setUsers(data))
-  }, []);
-
-  const getUsersId = async (id) => {
-    const { data } = await userService.getById(id);
-    setUser(data);
-  }
-
-  return (
-      <div>
+    return (
         <div>
-          {
-            users.map(user => <User key={user.id}
-                                    user={user}
-                                    getUserId={getUsersId}
-                                    getUser={getUser}/>)
-          }
+Users
         </div>
-        {user && <div> {user.name} -- {user.username}
-        </div>}
-      </div>
-  );
-};
-
-export { Users };
+    );
+}
