@@ -1,7 +1,7 @@
 import { axiosService } from './axios.service';
-import urls from '../constants/urls';
+import { urls } from '../constants';
 
 
 export const usersService = {
-  getAll: async () => await axiosService.get('https://jsonplaceholder.typicode.com/users')
+  getAll: () => axiosService.get(urls.users)
 }
