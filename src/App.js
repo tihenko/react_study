@@ -1,12 +1,16 @@
 import { useState } from 'react';
-import { Users } from './components';
+
+import { Users, UserInfo, Posts } from './components';
 
 const App = () => {
-
+  const [user, setUser] = useState(null);
   return (
       <div>
-
-        <Users/>
+        <div>
+          <Users setUser={setUser}/>
+          {user && <UserInfo user={user}/>}
+        </div>
+        <Posts/>
       </div>
   );
 };
