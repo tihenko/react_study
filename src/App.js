@@ -4,13 +4,15 @@ import { Users, UserInfo, Posts } from './components';
 
 const App = () => {
   const [user, setUser] = useState(null);
+  const [userIdForPosts, setUserIdForPosts] = useState(null);
+
   return (
       <div>
         <div>
           <Users setUser={setUser}/>
-          {user && <UserInfo user={user}/>}
+          {user && <UserInfo user={user} setUserIdForPosts={setUserIdForPosts}/>}
         </div>
-        <Posts/>
+        {userIdForPosts && <Posts setUserId={userIdForPosts}/>}
       </div>
   );
 };
