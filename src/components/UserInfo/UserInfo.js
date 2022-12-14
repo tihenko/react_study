@@ -1,4 +1,5 @@
-export const UserInfo = ({ user, setUserIdForPosts }) => {
+export const UserInfo = ({ user, setUserIdForPosts}) => {
+
   return (
       <div>
         <div>id: {user.id}</div>
@@ -10,5 +11,6 @@ export const UserInfo = ({ user, setUserIdForPosts }) => {
         <input type="button" value="show posts" onClick={() => setUserIdForPosts(user.id)}/>
 
       </div>
+
   );
 }
